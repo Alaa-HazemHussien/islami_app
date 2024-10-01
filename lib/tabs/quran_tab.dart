@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/my_theme_data.dart';
 import 'package:islami_app/sura_detials.dart';
 import 'package:islami_app/sura_model.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuranTab extends StatelessWidget {
   List<String> suraNames = [
     "الفاتحه",
@@ -137,8 +137,8 @@ class QuranTab extends StatelessWidget {
         endIndent: 30,
         indent: 30,
       ),
-      Text(
-        'Sura Name',
+      Text(AppLocalizations.of(context)!.suraName
+    ,
         style: Theme.of(context).textTheme.bodyLarge,
       ),
       const Divider(
