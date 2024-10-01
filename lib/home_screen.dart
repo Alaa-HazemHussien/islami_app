@@ -5,6 +5,7 @@ import 'package:islami_app/tabs/quran_tab.dart';
 import 'package:islami_app/tabs/radio_tab.dart';
 import 'package:islami_app/tabs/sebha_tab.dart';
 import 'package:islami_app/tabs/setting_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -15,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
 
-
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         fit: BoxFit.fill,
       ),
       Scaffold(
+        appBar: AppBar(title: Text(AppLocalizations.of(context)!.appTitle,style: Theme.of(context).textTheme.bodyLarge,),),
 
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: index,
@@ -67,6 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
      SebhaTab(),
      RadioTab(),
      AhadethTab(),
-     SettingTab()
+     const SettingTab()
   ];
 }

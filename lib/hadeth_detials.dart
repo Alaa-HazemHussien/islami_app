@@ -1,17 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:islami_app/my_theme_data.dart';
-
-
 import 'ahadeth_model.dart';
 
 class HadethDetials extends StatefulWidget {
   static const String routeName = "Hadeth Detials";
-
-
-
 
   @override
   State<HadethDetials> createState() => _HadethDetialsState();
@@ -40,10 +32,10 @@ class _HadethDetialsState extends State<HadethDetials> {
         body: Card(
           color: Colors.transparent,
           elevation: 0,
-          margin: EdgeInsets.only(top: 100, right: 18, left: 18),
+          margin: const EdgeInsets.only(top: 100, right: 18, left: 18),
           shape: OutlineInputBorder(
               borderRadius: BorderRadius.circular(25),
-              borderSide: BorderSide(color: MyThemeData.primary)),
+              borderSide: const BorderSide(color: MyThemeData.primary)),
           child: Padding(
             padding: const EdgeInsets.all(18.0),
             child: ListView.separated(
@@ -55,7 +47,7 @@ class _HadethDetialsState extends State<HadethDetials> {
                     textAlign: TextAlign.center,
                   );
                 },
-                separatorBuilder: (context, index) => Divider(
+                separatorBuilder: (context, index) => const Divider(
                   endIndent: 50,
                   indent: 50,
                   thickness: 1,color: MyThemeData.primary,

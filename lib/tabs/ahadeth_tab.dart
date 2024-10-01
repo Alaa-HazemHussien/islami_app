@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app/hadeth_detials.dart';
 import 'package:islami_app/my_theme_data.dart';
 import 'package:islami_app/ahadeth_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -11,7 +11,6 @@ class AhadethTab extends StatefulWidget {
 }
 class _AhadethTabState extends State<AhadethTab> {
   List<HadethModel> allAhadeth = [];
-
   @override
   Widget build(BuildContext context) {
     loadAhadeth();
@@ -22,14 +21,14 @@ class _AhadethTabState extends State<AhadethTab> {
             'assets/images/ahadeth_image.png',
           ),
         ),
-        Divider(
+        const Divider(
           thickness: 1,
           color: MyThemeData.primary,
           endIndent: 40,
           indent: 40,
         ),
-        Text('Ahadeth'),
-        Divider(
+        Text(AppLocalizations.of(context)!.ahadeth),
+        const Divider(
           thickness: 1,
           color: MyThemeData.primary,
           endIndent: 40,
@@ -42,7 +41,7 @@ class _AhadethTabState extends State<AhadethTab> {
                 onTap:(){Navigator.pushNamed(context, HadethDetials.routeName,
                     arguments: allAhadeth[index]);} ,);
               },
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                     thickness: 1,
                     color: MyThemeData.primary,
                     endIndent: 40,
@@ -53,7 +52,6 @@ class _AhadethTabState extends State<AhadethTab> {
       ],
     );
   }
-
   loadAhadeth() async {
     rootBundle.loadString('assets/files/ahadeth.txt').then((ahadeth) {
       List<String> ahadethList = ahadeth.trim().split("#");
@@ -65,11 +63,10 @@ class _AhadethTabState extends State<AhadethTab> {
         List<String> content = hadethOneLines;
         HadethModel hadethModel = HadethModel(title, content);
         allAhadeth.add(hadethModel);
-        print(title);
       }
       setState(() {
 
       });
-    }).catchError((e) => print(e.toString()));
+    }).catchError((e) => print(e.toString("error")));
   }
 }
