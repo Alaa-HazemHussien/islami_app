@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/home_screen.dart';
 import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/providers/my_provider.dart';
 import 'package:islami_app/sura_detials.dart';
+import 'package:provider/provider.dart';
 
 import 'hadeth_detials.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 void main() {
-  runApp( MyApp());
+  runApp(
+      ChangeNotifierProvider(
+          create: (context) => MyProvider(),
+          child: MyApp()));
 }
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.@override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale("ar"),
+      locale: Locale(provider.local),
       // localizationsDelegates: [
       //   AppLocalizations.delegate,
       //   GlobalMaterialLocalizations.delegate,

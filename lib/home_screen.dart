@@ -68,6 +68,6 @@ class _HomeScreenState extends State<HomeScreen> {
      SebhaTab(),
      RadioTab(),
      AhadethTab(),
-     const SettingTab()
+     SettingTab()
   ];
 }
