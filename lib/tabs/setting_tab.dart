@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 import '../bottom_sheets/show_language_bottom_sheet.dart';
+import '../bottom_sheets/show_mode_bottom_sheet.dart';
 
 class SettingTab extends StatefulWidget {
   @override
@@ -19,8 +20,8 @@ class _SettingTabState extends State<SettingTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            'Language :',
+          Text(AppLocalizations.of(context)!.language,
+
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           InkWell(
@@ -47,7 +48,7 @@ class _SettingTabState extends State<SettingTab> {
             ),
           ),
           Text(
-            'Mode:',
+            AppLocalizations.of(context)!.mode,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           InkWell(
@@ -59,7 +60,7 @@ class _SettingTabState extends State<SettingTab> {
               padding: EdgeInsets.all(8),
               child: Row(
                 children: [
-                  Text("Light"),
+                  Text(pro.theme==ThemeMode.light?AppLocalizations.of(context)!.light:AppLocalizations.of(context)!.dark),
                   Spacer(),
                   Icon(
                     Icons.arrow_drop_down,
@@ -103,9 +104,7 @@ class _SettingTabState extends State<SettingTab> {
       ),
       context: context,
       builder: (context) {
-        return Container(
-          child: Text('Light'),
-        );
+        return ModeBottomSheet();
       },
     );
   }

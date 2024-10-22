@@ -7,5 +7,9 @@
 "setting":"Setting",
 "radio":"Radio",
 "sebha":"Sebha",
-"quran":"Quran"
+"quran":"Quran",
+"language":"Language",
+"mode":"Mode",
+"light":"Light",
+"dark":"Dark"
 }
