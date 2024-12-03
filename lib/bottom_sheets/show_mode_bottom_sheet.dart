@@ -14,6 +14,7 @@ class ModeBottomSheet extends StatelessWidget {
           InkWell(
             onTap: () {
 provider.changeMode(ThemeMode.light);
+
               Navigator.pop(context);
             },
             child: Row(
