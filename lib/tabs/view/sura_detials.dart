@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/utils/my_theme_data.dart';
 import 'package:islami_app/providers/sura_details_provider.dart';
-import 'package:islami_app/sura_model.dart';
+import 'package:islami_app/tabs/models/sura_model.dart';
 import 'package:provider/provider.dart';
 
 class SuraDetials extends StatefulWidget {
@@ -64,7 +64,8 @@ class _SuraDetialsState extends State<SuraDetials> {
                   separatorBuilder: (context, index) => const Divider(
                     endIndent: 50,
                     indent: 50,
-                    thickness: 1,color: MyThemeData.primary,
+                    thickness: 1,
+                    color: MyThemeData.primary,
                   ),
                   itemCount: provider.verse.length),
             ),

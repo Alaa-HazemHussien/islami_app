@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/utils/my_theme_data.dart';
 import 'package:islami_app/providers/my_provider.dart';
-import 'package:islami_app/tabs/ahadeth_tab.dart';
-import 'package:islami_app/tabs/quran_tab.dart';
-import 'package:islami_app/tabs/radio_tab.dart';
-import 'package:islami_app/tabs/sebha_tab.dart';
-import 'package:islami_app/tabs/setting_tab.dart';
+import 'package:islami_app/tabs/view_model/ahadeth_tab.dart';
+import 'package:islami_app/tabs/view_model/quran_tab.dart';
+import 'package:islami_app/tabs/view_model/radio_tab.dart';
+import 'package:islami_app/tabs/view_model/sebha_tab.dart';
+import 'package:islami_app/tabs/view_model/setting_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 

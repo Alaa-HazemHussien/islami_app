@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../providers/my_provider.dart';
@@ -27,13 +26,13 @@ provider.changeMode(ThemeMode.light);
                             ? Colors.white
                             : Colors.black),
                   ),
-                 provider.theme==ThemeMode.light?Icon(
+                 provider.theme==ThemeMode.light?const Icon(
                     Icons.done,
                     color:Colors.white ,
-                  ):SizedBox.shrink(),
+                  ):const SizedBox.shrink(),
                 ]),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           InkWell(
@@ -51,10 +50,10 @@ provider.changeMode(ThemeMode.light);
                             ? Colors.white
                             : Colors.black),
                   ),
-                  provider.theme==ThemeMode.dark ?Icon(
+                  provider.theme==ThemeMode.dark ?const Icon(
                     Icons.done,
                     color:Colors.white ,
-                  ):SizedBox.shrink(),
+                  ):const SizedBox.shrink(),
                 ]),
           )
         ],

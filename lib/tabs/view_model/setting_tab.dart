@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
+import 'package:islami_app/utils/my_theme_data.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/providers/my_provider.dart';
 import 'package:provider/provider.dart';
-import '../bottom_sheets/show_language_bottom_sheet.dart';
-import '../bottom_sheets/show_mode_bottom_sheet.dart';
+import '../../bottom_sheets/show_language_bottom_sheet.dart';
+import '../../bottom_sheets/show_mode_bottom_sheet.dart';
 
 class SettingTab extends StatefulWidget {
   @override
