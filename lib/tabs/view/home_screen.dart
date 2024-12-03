@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
-import 'package:islami_app/tabs/ahadeth_tab.dart';
-import 'package:islami_app/tabs/quran_tab.dart';
-import 'package:islami_app/tabs/radio_tab.dart';
-import 'package:islami_app/tabs/sebha_tab.dart';
-import 'package:islami_app/tabs/setting_tab.dart';
+import 'package:islami_app/utils/my_theme_data.dart';
+import 'package:islami_app/providers/my_provider.dart';
+import 'package:islami_app/tabs/view_model/ahadeth_tab.dart';
+import 'package:islami_app/tabs/view_model/quran_tab.dart';
+import 'package:islami_app/tabs/view_model/radio_tab.dart';
+import 'package:islami_app/tabs/view_model/sebha_tab.dart';
+import 'package:islami_app/tabs/view_model/setting_tab.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home';
@@ -18,9 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider=Provider.of<MyProvider>(context);
     return Stack(children: [
       Image.asset(
-        'assets/images/background.png',
+        provider.theme==ThemeMode.light?
+        'assets/images/background.png':
+        'assets/images/darkBackgroundd.png',
         width: double.infinity,
         fit: BoxFit.fill,
       ),
@@ -33,29 +38,29 @@ class _HomeScreenState extends State<HomeScreen> {
             index = value;
             setState(() {});
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/quran.png')),
+                icon: const ImageIcon(AssetImage('assets/images/quran.png')),
                 label: 'quran',
-                backgroundColor: MyThemeData.primary),
+                backgroundColor: Theme.of(context).colorScheme.primary),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/sebha.png')),
+                icon: const ImageIcon(AssetImage('assets/images/sebha.png')),
                 label: 'sebha',
-                backgroundColor: MyThemeData.primary),
+                backgroundColor:Theme.of(context).colorScheme.primary),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/radio.png')),
+                icon: const ImageIcon(AssetImage('assets/images/radio.png')),
                 label: 'radio',
-                backgroundColor: MyThemeData.primary),
+                backgroundColor: Theme.of(context).colorScheme.primary),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage('assets/images/ahadeth.png')),
+                icon: const ImageIcon(AssetImage('assets/images/ahadeth.png')),
                 label: 'ahadeth',
-                backgroundColor: MyThemeData.primary),
+                backgroundColor: Theme.of(context).colorScheme.primary),
             BottomNavigationBarItem(
-                icon: Icon(
+                icon: const Icon(
                   Icons.settings,
                 ),
                 label: 'setting',
-                backgroundColor: MyThemeData.primary),
+                backgroundColor: Theme.of(context).colorScheme.primary),
           ],
         ),
         body: tabs[index],
@@ -68,6 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
      SebhaTab(),
      RadioTab(),
      AhadethTab(),
-     const SettingTab()
+     SettingTab()
   ];
 }

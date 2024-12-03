@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app/hadeth_detials.dart';
-import 'package:islami_app/my_theme_data.dart';
-import 'package:islami_app/ahadeth_model.dart';
+import 'package:islami_app/tabs/view/hadeth_detials.dart';
+import 'package:islami_app/utils/my_theme_data.dart';
+import 'package:islami_app/tabs/models/ahadeth_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AhadethTab extends StatefulWidget {

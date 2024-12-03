@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/my_theme_data.dart';
-import 'ahadeth_model.dart';
+import 'package:islami_app/utils/my_theme_data.dart';
+import '../models/ahadeth_model.dart';
 
 class HadethDetials extends StatefulWidget {
   static const String routeName = "Hadeth Detials";
